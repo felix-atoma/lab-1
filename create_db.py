@@ -3,16 +3,18 @@ import mysql.connector
 # Connect to MySQL Server
 conn = mysql.connector.connect(
     host="localhost",
-    user="", # Add user
-    password="" # Add your password
+    user="root",
+    password="Adjola12.,"  # Ensure your password is correct
 )
 
 # Create a cursor object
 cursor = conn.cursor()
 
-# Create a new database
-database_name = "" # Add a unique Database name
-cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database_name}")
+# Define the database name
+database_name = "farmconnect_db"  # Replace with your preferred database name
+
+# Execute the CREATE DATABASE command
+cursor.execute(f"CREATE DATABASE IF NOT EXISTS `{database_name}`")
 
 print(f"Database '{database_name}' created successfully!")
 
